@@ -12,7 +12,6 @@ services:
       - pg_data:/var/lib/postgresql/data
   backend:
     image: skakunma/kitygram_backend
-    build: ./backend/
     env_file: .env
     depends_on:
       - db
@@ -21,13 +20,11 @@ services:
   frontend:
     image: skakunma/kitygram_frontend
     env_file: .env
-    build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
     image: skakunma/kitygram_gateway
-    build: ./nginx/
     env_file: .env
     ports:
       - 9000:80
