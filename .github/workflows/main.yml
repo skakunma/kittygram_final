@@ -153,9 +153,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
-        with:
-          context: ./gateway/
-          push: true
-          # Тут вместо username должен быть ваш логин на Docker Hub
-          tags: {{ secrets.DOCKER_USERNAME }}/taski_gateway:latest 
+
 
