@@ -52,7 +52,7 @@ jobs:
         cd backend/
         python manage.py test
 
-    frontend_tests:
+  frontend_tests:
     runs-on: ubuntu-latest
 
     steps:
